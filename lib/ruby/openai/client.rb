@@ -23,6 +23,10 @@ module OpenAI
       end
     end
 
+    def edits(version: default_version, parameters: {})
+      post(url: "/#{version}/edits", parameters: parameters)
+    end
+
     def embeddings(engine:, version: default_version, parameters: {})
       post(url: "/#{version}/engines/#{engine}/embeddings", parameters: parameters)
     end
